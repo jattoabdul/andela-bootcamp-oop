@@ -1,0 +1,13 @@
+class Receipt {
+	constructor(){
+
+	}
+
+
+	// METHOD
+	//
+	//
+	//
+	//
+	//
+}
