@@ -1,0 +1,27 @@
+{
+  "name": "oop",
+  "version": "1.0.0",
+  "description": "An OOP implementation of a real life scenario with a TDD approach",
+  "main": "src/main.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha tests/main.js"
+  },
+  "keywords": [
+    "TDD",
+    "javascript",
+    "OOP"
+  ],
+  "author": "abdulqahhar aminujatto",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
+  },
+  "devDependencies": {
+    "mocha-sinon": "^2.0.0",
+    "sinon": "^2.3.6"
+  }
+}
