@@ -3,9 +3,13 @@
 const Mobile = require('./mobile.js');
 
 export default class Samsung extends Mobile {
-	constructor(phone_num, text_recipients=[], text_msg='')
+	constructor(phone_num, imei)
 	{
-		super(phone_num, text_recipients, text_msg);
+		super(phone_num, imei);
+	}
+
+	getImei(){
+		return console.log(`Your IMEI is: ${this.imei}`);
 	}
 
 	makeSingleCall(number)
@@ -23,4 +27,8 @@ export default class Samsung extends Mobile {
 		}
 	}
 
+	sendTextMessage(message='', text_recipients=[])
+	{
+		return super.sendTextMessage(message, text_recipients);
+	}
 }

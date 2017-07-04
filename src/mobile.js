@@ -1,12 +1,14 @@
 'use strict';
 
-	export default class Mobile {
-		constructor(phone_num, text_recipients=[], text_msg='') {
-			this.phone_num = phone_num;
-			this.text_recipients = [...text_recipients];
-			this.text_msg = text_msg;
-		}
+export default class Mobile {
+	constructor(phone_num, imei) {
+		this.phone_num = phone_num;
+		this.imei = imei;
+	}
 
+	getImei(){
+		return this.imei;
+	}
 	//make call
 	makeSingleCall(number)
 	{
@@ -23,12 +25,11 @@
 		}
 	}
 
-	sendTextMessage()
+	sendTextMessage(message='', text_recipients=[])
 	{
-		if(Array.isArray(this.text_recipients) === true && this.text_recipients.length>0)
+		if(typeof(message) === 'string' && text_recipients.length>0)
 		{
-			// return console.log(`Sending Text Message to ${this.text_recipients.join()} From ${this.phone_num}`);
-			return console.log(`Sending Text Message to ${this.text_recipients.join()} From ${this.phone_num}`);
+			console.log(`Sending Text Message to ${text_recipients.join()} From ${this.phone_num} And the messafge body is ${message}`);
 		}
 	}
 }

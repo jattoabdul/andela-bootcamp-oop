@@ -8,6 +8,10 @@ export default class Nokia extends Mobile {
 		super(phone_num, text_recipients, text_msg);
 	}
 
+	getImei(){
+		return console.log(`Your IMEI is: ${this.imei}`);
+	}
+
 	makeSingleCall(number)
 	{
 		// return super.makeSingleCall(number);
@@ -21,6 +25,11 @@ export default class Nokia extends Mobile {
 			// return super.makeConferenceCall(numbers);
 			return console.log("Calling " + super.makeConferenceCall(numbers) + " From The Nokia Class");
 		}
+	}
+
+	sendTextMessage(message='', text_recipients=[])
+	{
+		return super.sendTextMessage(message, text_recipients);
 	}
 
 }
