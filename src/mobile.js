@@ -10,26 +10,25 @@
 	//make call
 	makeSingleCall(number)
 	{
-		return console.log(`Calling ${number} From ${this.phone_num}`);
-		// return console.log("Calling "+number+" From "+this.phone_num);
+		// return console.log("Calling " + number + " From " + this.phone_num);
+		return number;
 	}
 
 	makeConferenceCall(numbers=[])
 	{
-		if(typeof(numbers) === 'array' && numbers.length>0)
+		if(Array.isArray(numbers) === true && numbers.length>0)
 		{
-			// return console.log(`Calling ${number.join()}`);
-			return `Calling ${numbers.join()}`;
+			// return console.log("Calling " + numbers.join());
+			return numbers.join();
 		}
 	}
 
 	sendTextMessage()
 	{
-		if(typeof(this.text_recipients) === 'array' && this.text_recipients.length>0)
+		if(Array.isArray(this.text_recipients) === true && this.text_recipients.length>0)
 		{
+			// return console.log(`Sending Text Message to ${this.text_recipients.join()} From ${this.phone_num}`);
 			return console.log(`Sending Text Message to ${this.text_recipients.join()} From ${this.phone_num}`);
-			// return console.log("Sending Text Message to "+this.text_recipients.join());
 		}
 	}
-
 }

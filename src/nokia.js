@@ -1,43 +1,26 @@
-class CardScanner {
-	// constructor (cardname, bank, pin) {
-	// 	this.cardName = cardname;
-	// 	this.bank = bank;
-	// 	this.pin = pin;
-	// }
+'use strict';
 
-	// func (){
+const Mobile = require('./mobile.js');
 
-	// }
+export default class Nokia extends Mobile {
+	constructor(phone_num, text_recipients=[], text_msg='')
+	{
+		super(phone_num, text_recipients, text_msg);
+	}
 
-	// METHODS
+	makeSingleCall(number)
+	{
+		// return super.makeSingleCall(number);
+		return console.log("Calling " + super.makeSingleCall(number)+ " From The Nokia Class");
+	}
 
-	// accept card
-	login (){
-		const comm = new Communication();
-
-		if (comm.makeRequest() == 'Success') {
-			// auth success
-		} else {
-			error = new ErrorHandler();
-			error.handleAuthError(msg);
-
+	makeConferenceCall(numbers=[])
+	{
+		if(Array.isArray(numbers) === true && numbers.length>0)
+		{
+			// return super.makeConferenceCall(numbers);
+			return console.log("Calling " + super.makeConferenceCall(numbers) + " From The Nokia Class");
 		}
 	}
-	//end accept card
-
-	// Read Card
-	logout (){
-
-	}
-
-	//end Read Card
-
-
-	// eject card
-
-	// validate pin
-
 
 }
-
-module.exports = Auth;
