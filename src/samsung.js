@@ -15,7 +15,7 @@ export default class Samsung extends Mobile {
 
 	makeSingleCall(number)
 	{
-		return console.log(`Calling ${super.makeSingleCall(number)} From The ${this.name} Class"`);
+		return console.log(`Calling ${super.makeSingleCall(number)} From The ${this.name} Class`);
 		// return console.log("Calling " + super.makeSingleCall(number)+ " From The Samsung Class");
 	}
 

@@ -103,33 +103,42 @@ describe("Samsung", () => {
 	});
 
 	// Samsung Class getImei method tests
-	describe("Mobile getImei Method", () => {
+	describe("Samsung getImei Method", () => {
 
-		//mobile getImei return correct imei
+		//samsung getImei return correct imei
 		it("should return imei", () => {
-			let imeiNumber = mobile.getImei();
-			assert.equal(mobile.getImei(), imeiNumber);
+			let imeiNumber = samsung.getImei();
+			assert.equal(samsung.getImei(), imeiNumber);
 		});
 
-		//mobile getImei return undefined
+		//samsung getImei return undefined
 		it("should return undefined", () => {
-			mobile = new Mobile(phoneNumber);
-			assert.equal(mobile.getImei(), undefined);
+			samsung = new Samsung(phoneNumber);
+			assert.equal(samsung.getImei(), undefined);
 		});
 
 	})
 
-	//mobile makeConference call method tests
-	describe("Mobile makeSingleCall Method", () => {
+	//samsung makeSingleCall method tests
+	describe("Samsung makeSingleCall Method", () => {
 
 		//mobile makeSingleCall method returns number passed as Argument
-		it("should get return a string of value passed as argument into method", () => {
+		it("should return a string of message with value passed as argument into the method", () => {
+			let result = samsung.makeSingleCall();
 			let nums = '1233455';
-			assert.equal(mobile.makeSingleCall(nums), nums);
+			assert.equal(samsung.makeSingleCall(nums), result);
 		});
 
 	})
 
+	//samsung activate4G method tests
+	describe("Samsung Activate4G Method", () => {
 
+		//samsung activate4G method returns a string of message
+		it("should get return a string of message ", () => {
+			let result = samsung.activate4G();
+			assert.equal(samsung.activate4G(), result);
+		});
+	})
 
 })
