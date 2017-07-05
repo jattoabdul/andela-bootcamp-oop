@@ -20,7 +20,7 @@ let conferenceCallContacts = ['07087116336', '08033920706', '08055370900'];
 let ble_pass = '123jat';
 let imei = '993485578849';
 
-// testing
+// testing Parent Class
 describe("Mobile", () => {
 	let mobile;
 
@@ -91,5 +91,45 @@ describe("Mobile", () => {
 		});
 
 	})
+
+})
+
+// testing subClass
+describe("Samsung", () => {
+	let samsung;
+
+	beforeEach(() => {
+		samsung = new Samsung(phoneNumber, imei);
+	});
+
+	// Samsung Class getImei method tests
+	describe("Mobile getImei Method", () => {
+
+		//mobile getImei return correct imei
+		it("should return imei", () => {
+			let imeiNumber = mobile.getImei();
+			assert.equal(mobile.getImei(), imeiNumber);
+		});
+
+		//mobile getImei return undefined
+		it("should return undefined", () => {
+			mobile = new Mobile(phoneNumber);
+			assert.equal(mobile.getImei(), undefined);
+		});
+
+	})
+
+	//mobile makeConference call method tests
+	describe("Mobile makeSingleCall Method", () => {
+
+		//mobile makeSingleCall method returns number passed as Argument
+		it("should get return a string of value passed as argument into method", () => {
+			let nums = '1233455';
+			assert.equal(mobile.makeSingleCall(nums), nums);
+		});
+
+	})
+
+
 
 })
