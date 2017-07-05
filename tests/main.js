@@ -46,20 +46,50 @@ describe("Mobile", () => {
 	})
 
 	//mobile makeConference call method tests
+	describe("Mobile makeSingleCall Method", () => {
+
+		//mobile makeSingleCall method returns number passed as Argument
+		it("should get return a string of value passed as argument into method", () => {
+			let nums = '1233455';
+			assert.equal(mobile.makeSingleCall(nums), nums);
+		});
+
+	})
+
+	//mobile makeConference call method tests
 	describe("Mobile makeConferenceCall Method", () => {
 
-		//mobile makeConference method returns numbers string only if passed arg is array
-		it("should get an array of value as argument", () => {
+		//mobile makeConference method returns error if passed arg is not an array
+		it("should get return an error if value passed as argument is not an array", () => {
 			let nums = '0706432';
 			assert.equal(mobile.makeConferenceCall(nums), "Value not a list of numbers");
 		});
 
+		//mobile makeConference method returns string of joined array Args only if passed arg is array
+		it("should get return a string of joined array if value passed as argument is an array", () => {
+			let nums = ['0706432', '1233455'];
+			assert.equal(mobile.makeConferenceCall(nums), nums.join());
+		});
 
+	})
+
+		//mobile makeConference call method tests
+	describe("Mobile sendTextMessage Method", () => {
+
+		//mobile sendTextMessage method returns error if passed arg message is not string and recipient array is greater than or equals to 0
+		it("should get return an error if value passed as msg argument is not a string", () => {
+			let msg = 123;
+			let text_recipients = [];
+			assert.equal(mobile.sendTextMessage(msg, text_recipients), "Message Value not a string of numbers");
+		});
+
+		//mobile makeConference method returns string of joined array Args only if passed arg is array
+		it("should get return a string of joined array if value passed as argument is an array", () => {
+			let msg = 'My message Body is THis';
+			let text_recipients = ['07023454545', '080213453454'];
+			assert.equal(mobile.sendTextMessage(msg, text_recipients), "sent");
+		});
 
 	})
 
 })
-
-// describe("Samsung", () => {
-
-// })

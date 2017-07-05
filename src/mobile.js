@@ -32,7 +32,9 @@ export default class Mobile {
 		if(typeof(message) === 'string' && text_recipients.length>0)
 		{
 			console.log(`Sending Text Message to ${text_recipients.join()} From ${this.phone_num} And the message body is ${message}`);
+			return 'sent';
 		}
+		return "Message Value not a string of numbers";
 	}
 
 }
