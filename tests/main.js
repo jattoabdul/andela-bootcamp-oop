@@ -50,7 +50,8 @@ describe("Mobile", () => {
 
 		//mobile makeConference method returns numbers string only if passed arg is array
 		it("should get an array of value as argument", () => {
-			assert.ee(mobile.makeSingleCall(num), )
+			let nums = '0706432';
+			assert.equal(mobile.makeConferenceCall(nums), "Value not a list of numbers");
 		});
 
 

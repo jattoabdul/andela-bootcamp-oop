@@ -23,6 +23,8 @@ export default class Mobile {
 			// return console.log("Calling " + numbers.join());
 			return numbers.join();
 		}
+		// return undefined;
+		return "Value not a list of numbers";
 	}
 
 	sendTextMessage(message='', text_recipients=[])
