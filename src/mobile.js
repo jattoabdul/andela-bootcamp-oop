@@ -32,4 +32,5 @@ export default class Mobile {
 			console.log(`Sending Text Message to ${text_recipients.join()} From ${this.phone_num} And the message body is ${message}`);
 		}
 	}
+
 }

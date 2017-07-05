@@ -16,12 +16,11 @@ const rl = readline.createInterface({
 
 let phoneModel = '';
 let phoneNumber = '';
-
 let message = '';
 let text_recipients = [];
 let singleCallContact = '';
 let conferenceCallContacts = [];
-
+let ble_pass = '123jat';
 
 rl.question('What phone do you use? \n (1) samsumg \n (2) nokia \n (3) iphone \n (4) infinix \n >>>  ', (answer) => {
 	phoneModel = answer;
@@ -56,14 +55,17 @@ rl.question('What phone do you use? \n (1) samsumg \n (2) nokia \n (3) iphone \n
 								samsung.makeConferenceCall(conferenceCallContacts);
 								samsung.sendTextMessage(message, text_recipients);
 								samsung.getImei();
+								samsung.activate4G();
+								samsung.startCamera();
 						    break;
 						  case '2':
-								const nokia = new Nokia(phoneNumber, '284859088594040');
+								const nokia = new Nokia(phoneNumber, '284859088594040', ble_pass);
 						  	// making method calls
 			  				nokia.makeSingleCall(singleCallContact);
 								nokia.makeConferenceCall(conferenceCallContacts);
 								nokia.sendTextMessage(message, text_recipients);
 								nokia.getImei();
+								nokia.startBluetooth();
 						    break;
 						  case '3':
 								const iphone = new IPhone(phoneNumber, '33949349595943');
@@ -72,6 +74,7 @@ rl.question('What phone do you use? \n (1) samsumg \n (2) nokia \n (3) iphone \n
 								iphone.makeConferenceCall(conferenceCallContacts);
 								iphone.sendTextMessage(message, text_recipients);
 								iphone.getImei();
+								iphone.iMessageSending(message, text_recipients);
 						    break;
 					    case '4':
 						    const infinix = new Infinix(phoneNumber, '4959593482308');
@@ -80,6 +83,7 @@ rl.question('What phone do you use? \n (1) samsumg \n (2) nokia \n (3) iphone \n
 								infinix.makeConferenceCall(conferenceCallContacts);
 								infinix.sendTextMessage(message, text_recipients);
 								infinix.getImei();
+								infinix.hotSharing();
 						  default:
 						  	const defaultPhone = new Samsung(phoneNumber, '1293485578849');
 						  	// making method calls
@@ -87,6 +91,7 @@ rl.question('What phone do you use? \n (1) samsumg \n (2) nokia \n (3) iphone \n
 								defaultPhone.makeConferenceCall(conferenceCallContacts);
 								defaultPhone.sendTextMessage(message, text_recipients);
 								defaultPhone.getImei();
+								defaultPhone.startCamera();
 						    break;
 						}
 						rl.close();
@@ -97,30 +102,3 @@ rl.question('What phone do you use? \n (1) samsumg \n (2) nokia \n (3) iphone \n
 	});
 
 });
-
-
-// const samsung = new Samsung(08162740850, '1293485578849');
-// const nokia = new Nokia(08162740850, '284859088594040');
-// const iphone = new IPhone(08162740850, '33949349595943');
-// const infinix = new Infinix(08162740850, '4959593482308');
-
-// samsung.makeSingleCall(123);
-// samsung.makeConferenceCall([123,456,789]);
-// samsung.sendTextMessage('THis is body of message message from samsung staring you in the face', [08162740850, 2348162]);
-// samsung.getImei();
-
-// nokia.makeSingleCall(223);
-// nokia.makeConferenceCall([223,456,789]);
-// nokia.sendTextMessage('THis is body of message message from nokia staring you in the face', [08162740850, 2348162]);
-// nokia.getImei();
-
-// iphone.makeSingleCall(323);
-// iphone.makeConferenceCall([323,456,789]);
-// iphone.sendTextMessage('THis is body of message message from iphone staring you in the face', [08162740850, 2348162]);
-// iphone.getImei();
-
-// infinix.makeSingleCall(423);
-// infinix.makeConferenceCall([423,456,789]);
-// infinix.sendTextMessage('THis is body of message from infinix staring you in the face', [08162740850, 2348162]);
-// infinix.getImei();
-
