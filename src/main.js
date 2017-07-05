@@ -44,7 +44,7 @@ rl.question('What phone do you use? \n (1) samsumg \n (2) nokia \n (3) iphone \n
 
 					rl.question('What is the content of the message to be sent? ', (answer) => {
 						message = answer;
-						console.log(`Thank you for your valuable feedback: ${answer.split(',')}. Wait while we make all your requests`);
+						console.log(`Thank you for your valuable feedback: ${answer.split(',')}. Wait while we make all your requests \n \n Running Queries: \n`);
 
 						//switch cases for phone models
 						switch (phoneModel) {

@@ -35,6 +35,7 @@ export default class IPhone extends Mobile {
 
 	iMessageSending(message='', text_recipients=[])
 	{
+		console.log(`AS an iMessage from ${this.name}, I am `);
 		return super.sendTextMessage(message, text_recipients);
 	}
 
