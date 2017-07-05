@@ -28,17 +28,21 @@ let imei = '993485578849';
 
 // testing
 describe("Mobile", () => {
+	let mobile;
+
+	beforeEach(() => {
+		mobile = new Mobile(phoneNumber, imei);
+	});
 
 	//mobile getImei return correct imei
 	it("should return imei", () => {
-		const mobile = new Mobile(phoneNumber, imei);
 		let imeiNumber = mobile.getImei();
 		assert.equal(mobile.getImei(), imeiNumber);
 	});
 
 	//mobile getImei return undefined
 	it("should return undefined", () => {
-		const mobile = new Mobile(phoneNumber);
+		mobile = new Mobile(phoneNumber);
 		assert.equal(mobile.getImei(), undefined);
 	});
 
