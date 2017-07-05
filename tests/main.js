@@ -1,5 +1,6 @@
 const assert = require('chai').assert;
 const expect = require('chai').expect;
+
 require('mocha-sinon');
 const app = require('../src/main.js');
 // each class
@@ -19,13 +20,6 @@ let conferenceCallContacts = ['07087116336', '08033920706', '08055370900'];
 let ble_pass = '123jat';
 let imei = '993485578849';
 
-// instantiating the classes
-// const mobile = new Mobile(phoneNumber, imei);
-// const samsung = new Samsung(phoneNumber, '1' + imei);
-// const nokia = new Nokia(phoneNumber, '2' + imei, ble_pass);
-// const iphone = new IPhone(phoneNumber, '3' + imei);
-// const infinix = new Infinix(phoneNumber, '4' +imei);
-
 // testing
 describe("Mobile", () => {
 	let mobile;
@@ -34,19 +28,35 @@ describe("Mobile", () => {
 		mobile = new Mobile(phoneNumber, imei);
 	});
 
-	//mobile getImei return correct imei
-	it("should return imei", () => {
-		let imeiNumber = mobile.getImei();
-		assert.equal(mobile.getImei(), imeiNumber);
-	});
+	// Mobile Class getImei method tests
+	describe("Mobile getImei Method", () => {
 
-	//mobile getImei return undefined
-	it("should return undefined", () => {
-		mobile = new Mobile(phoneNumber);
-		assert.equal(mobile.getImei(), undefined);
-	});
+		//mobile getImei return correct imei
+		it("should return imei", () => {
+			let imeiNumber = mobile.getImei();
+			assert.equal(mobile.getImei(), imeiNumber);
+		});
 
-	//
+		//mobile getImei return undefined
+		it("should return undefined", () => {
+			mobile = new Mobile(phoneNumber);
+			assert.equal(mobile.getImei(), undefined);
+		});
+
+	})
+
+	//mobile makeConference call method tests
+	describe("Mobile makeConferenceCall Method", () => {
+
+		//mobile makeConference method returns numbers string only if passed arg is array
+		it("should get an array of value as argument", () => {
+			assert.ee(mobile.makeSingleCall(num), )
+		});
+
+
+
+	})
+
 })
 
 // describe("Samsung", () => {
