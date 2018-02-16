@@ -10,7 +10,7 @@ export default class Samsung extends Mobile {
 	}
 
 	getImei(){
-		return console.log(`Your IMEI is: ${this.imei}`);
+		return console.log(`Your IMEI is: ${this._imei}`);
 	}
 
 	makeSingleCall(number)
