@@ -11,7 +11,7 @@ export default class Nokia extends Mobile {
 	}
 
 	getImei(){
-		return console.log(`Your IMEI is: ${this._imei}`);
+		return console.log(`Your IMEI is: ${this.imei}`);
 	}
 
 	makeSingleCall(number)

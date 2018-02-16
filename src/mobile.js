@@ -3,11 +3,11 @@
 export default class Mobile {
 	constructor(phone_num, imei) {
 		this.phone_num = phone_num;
-		this._imei = imei;
+		this.imei = imei;
 	}
 
 	getImei(){
-		return this._imei;
+		return this.imei;
 	}
 	//make call
 	makeSingleCall(number)
